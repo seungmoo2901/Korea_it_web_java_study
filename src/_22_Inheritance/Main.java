@@ -19,6 +19,21 @@ public class Main {
         animal1.move();
 
         Tiger tiger1 = new Tiger();
+        tiger1.setAnimalName("호랭이");
+        System.out.println(tiger1.getAnimalName());
+        tiger1.setAnimalAge(3);
+        System.out.println(tiger1.getAnimalAge());
+        tiger1.move();
+        tiger1.hunt();
+        tiger1.setStriped(true);
 
+        Tiger tiger2 = new Tiger("백호",3,false);
+
+
+        Human human = new Human("이승무",26);
+        System.out.println(human.getAnimalName());
+        System.out.println(human.getAnimalAge());
+        human.move();
+        human.read(" 불편한 편의점");
     }
 }
