@@ -26,5 +26,10 @@ public class Main {
         //재사용하지 않고 한 번만 쓰고 버릴거라면 익명클래스 사용
         //즉 임시로 만들ㅇ진 이름없는 자식클래스 = 익명클래스
         //그러므로 추상클래스의 객체가 만들어진것이 아니기때문에 추상클래스의 개념에 위배되는것이 아님
+
+        TabletFactory tabletFactory = new TabletFactory("Apple");
+        tabletFactory.produce("아이패드 6세대");
+        tabletFactory.upgrade("아이패드 7세대");
+
     }
 }
