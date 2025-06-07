@@ -23,18 +23,38 @@ public class BookJson {
         Gson gson = new Gson();
         Gson gsonBuilder = new GsonBuilder().setPrettyPrinting().create();
 
-        String bookJson = null;
         Book book = new Book(
-                "978-123456789B",
+                "978-1234567890",
                 "자바의 정석",
                 "남궁성",
                 "38000",
                 "도우출판"
         );
-        bookJson = gson.toJson(book);
-        System.out.println(bookJson);
 
-        Map<String, String> map2 = gson.fromJson(bookJson,Map.class);
-        System.out.println(map2);
+        //Book 객체 → JSON 문자열:
+        String jsonBook = gson.toJson(book);
+        System.out.println("Book 객체 → JSON 문자열");
+        System.out.println(jsonBook);
+
+        System.out.println();
+
+        //JSON → Map
+        Map<String, String> bookMap = gson.fromJson(jsonBook, Map.class);
+        System.out.println("JSON → Map");
+        System.out.println(bookMap);
+
+        System.out.println();
+
+        //Map → Pretty JSON
+        String prettyJsonFromMap = gsonBuilder.toJson(bookMap);
+        System.out.println("Map → Pretty JSON");
+        System.out.println(prettyJsonFromMap);
+
+        System.out.println();
+
+        //JSON → Book 객체
+        Book parsedBook = gson.fromJson(jsonBook, Book.class);
+        System.out.println("JSON → Book 객체");
+        System.out.println(parsedBook);
     }
 }
